@@ -1,0 +1,55 @@
+﻿using Core;
+
+namespace Core
+{
+    using System;
+
+    using System.IO;
+
+    public partial class Program
+    {
+        public static String[] ArgumentArray;
+
+        static Program()
+        {
+            Studioxportable.Bundle();
+
+            return;
+        }
+
+        public static void Main(params String[] Argument_ARRAY)
+        {
+            Interopapi.RequestCurrentDirectoryExplorer();
+
+            ArgumentArray = Argument_ARRAY;
+
+            Backup(@"C:\Users\todor\OneDrive\Desktop\Isolated\program-boot\Program.cs", @"C:\Users\todor\OneDrive\Desktop\Isolated\windows", @"C:\origin-cs-lib-dll-10-19-2023-06-25-AM-1020-windows-102", true);
+
+            return;
+        }
+
+        public static void Backup(String FileFilenameStartup___VALUE, String DirectoryFullNameOrigin____VALUE, String DirectoryFullNameDestination____VALUE, Boolean answer_BACKUP_should)
+        {
+            Boolean isEqualCheck, shouldReturnCheck;
+
+            isEqualCheck = answer_BACKUP_should is true;
+
+            shouldReturnCheck = isEqualCheck is false;
+
+            if (shouldReturnCheck is true)
+            {
+                return;
+            }
+            else
+                "false".ToString();
+
+            Studioxportablegithub.Github(DirectoryFullNameOrigin____VALUE, DirectoryFullNameDestination____VALUE);
+
+            var path_FILE_filename = Path.Combine(DirectoryFullNameDestination____VALUE, "startup");
+
+            File.Copy(FileFilenameStartup___VALUE, path_FILE_filename, true);
+
+            return;
+        }
+    }
+}
